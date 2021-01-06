@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GrowwAssignment</string>
+
+    <string name="title_calendar">Calendar</string>
+
+    <string name="label_month">Month</string>
+    <string name="label_year">Year (Min. 1800, Max. 2100)</string>
+
+    <string name="hint_date">DD/MM/YYYY</string>
+
+    <string name="btn_search">Search</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_week">Get Week</string>
+    <string name="error_valid_date">Please enter a valid date</string>
+    <string name="label_week">Week: </string>
+</resources>
