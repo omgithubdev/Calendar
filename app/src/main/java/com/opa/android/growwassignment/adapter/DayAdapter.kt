@@ -13,16 +13,11 @@ import com.opa.android.growwassignment.model.Day
 class DayAdapter : RecyclerView.Adapter<DayAdapter.DayViewHolder>() {
 
     val dayList = ArrayList<Day>()
-    private lateinit var listener: (View, Int) -> Unit
 
     fun setDayList(dayList: List<Day>) {
         this.dayList.clear()
         this.dayList.addAll(dayList)
         notifyDataSetChanged()
-    }
-
-    fun setOnClickListener(listener: (View, Int) -> Unit) {
-        this.listener = listener
     }
 
     inner class DayViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

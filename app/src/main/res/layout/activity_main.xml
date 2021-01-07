@@ -27,10 +27,11 @@
             android:id="@+id/tvMonth"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/space_20"
+            android:layout_marginLeft="@dimen/space_24"
             android:layout_marginTop="@dimen/space_16"
             android:text="@string/label_month"
             android:textSize="@dimen/font_16"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/tvYear"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
@@ -44,6 +45,7 @@
             android:layout_marginRight="@dimen/space_16"
             android:text="@string/label_year"
             android:textSize="@dimen/font_16"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvMonth"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
@@ -53,7 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_16"
-            android:layout_marginTop="@dimen/space_20"
+            android:layout_marginTop="@dimen/space_12"
             app:layout_constraintEnd_toStartOf="@+id/spYear"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvMonth" />
@@ -63,7 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_12"
-            android:layout_marginTop="@dimen/space_20"
+            android:layout_marginTop="@dimen/space_12"
             android:layout_marginRight="@dimen/space_16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/spMonth"

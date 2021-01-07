@@ -21,10 +21,8 @@ import kotlin.collections.ArrayList
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    var selectedYearPos = -1
-    var selectedMonthPos = -1
 
-    private var adapter = DayAdapter()
+    private val adapter = DayAdapter()
 
     private val handler = Handler()
 
@@ -53,12 +51,7 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                adapter.setDayList(
-                    CustomCalendar.getDayList(
-                        binding.spMonth.selectedItemPosition + 1,
-                        binding.spYear.selectedItem as Int
-                    )
-                )
+                updateDays()
             }
         }
 
@@ -73,12 +66,7 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                adapter.setDayList(
-                    CustomCalendar.getDayList(
-                        binding.spMonth.selectedItemPosition + 1,
-                        binding.spYear.selectedItem as Int
-                    )
-                )
+                updateDays()
             }
         }
 
@@ -173,12 +161,25 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnClear.setOnClickListener {
-            binding.etDate.setText("")
-            binding.tvWeek.setText(getString(R.string.label_week))
+            reset()
         }
     }
 
-    fun initViews() {
+    private fun reset(){
+        binding.etDate.setText("")
+        binding.tvWeek.setText(getString(R.string.label_week))
+    }
+
+    private fun updateDays() {
+        adapter.setDayList(
+            CustomCalendar.getDayList(
+                binding.spMonth.selectedItemPosition + 1,
+                binding.spYear.selectedItem as Int
+            )
+        )
+    }
+
+    private fun initViews() {
         binding.rvDays.adapter = adapter
 
         ArrayAdapter.createFromResource(
@@ -192,10 +193,7 @@ class MainActivity : AppCompatActivity() {
             binding.spMonth.adapter = adapter
         }
 
-        selectedMonthPos = CustomCalendar.getCurrentMonth()
-
         val yearList = CustomCalendar.getYearList()
-        selectedYearPos = yearList.indexOf(CustomCalendar.getCurrentYear())
 
         ArrayAdapter<Int>(
             this,
@@ -208,8 +206,8 @@ class MainActivity : AppCompatActivity() {
             binding.spYear.adapter = adapter
         }
 
-        binding.spMonth.setSelection(selectedMonthPos)
-        binding.spYear.setSelection(selectedYearPos)
+        binding.spMonth.setSelection(CustomCalendar.getCurrentMonth())
+        binding.spYear.setSelection(yearList.indexOf(CustomCalendar.getCurrentYear()))
     }
 
     override fun onDestroy() {

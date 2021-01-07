@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">GrowwAssignment</string>
 
-    <string name="title_calendar">Calendar</string>
+    <string name="title_calendar"><u>Calendar</u></string>
 
     <string name="label_month">Month</string>
-    <string name="label_year">Year (Min. 1800, Max. 2100)</string>
+    <string name="label_year">Year</string>
 
     <string name="hint_date">DD/MM/YYYY</string>
 
